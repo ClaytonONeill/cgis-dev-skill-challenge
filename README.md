@@ -1,3 +1,7 @@
+# This applications work flow was managed and tracked within:
+
+### https://trello.com/b/tCfElCeG/github-users-web-app-daily-work-flow
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
