@@ -1,10 +1,11 @@
 // IMPORTS //
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import UserContainer from './Components/UserContainer.jsx';
 
-// STYLES //
-import './App.css';
+// COMPONENTS //
+import Header from './Components/Header.jsx';
+import UserTable from './Components/UserTable.jsx';
+
 
 function App() {
 
@@ -19,11 +20,11 @@ function App() {
 
   }, []);
 
-
   return (
-    <React.Fragment>
-      <UserContainer />
-    </ React.Fragment>
+    <div>
+      <Header />
+      <UserTable userData={userData} />
+    </div>
   );
 }
 
