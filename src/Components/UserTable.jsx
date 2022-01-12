@@ -1,42 +1,34 @@
 // IMPORTS //
 import React from 'react';
+import User from './User.jsx';
+
+// MATERIAL ELEMENTS//
+import { Container } from '@mui/material';
+import { Grid } from '@mui/material';
 
 // STYLES //
-import { Paper } from '@mui/material';
-import { Table } from '@mui/material';
-import { TableBody } from '@mui/material';
-import { TableCell } from '@mui/material';
-import { TableContainer } from '@mui/material';
-import { TableHead } from '@mui/material';
-import { TableRow } from '@mui/material';
+import { makeStyles } from '@material-ui/styles';
 
+const useStyles = makeStyles({
+  containerStyle: {
+    margin: '2em auto'
+  },
+  cardStyle:  {
+    margin: '10px'
+  }
+})
 
 export default function UserTable({ userData }) {
 
-  const rows = userData;
+  const classes = useStyles();
 
-  console.log(rows)
+  let rows = userData;
 
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="Users Table">
-        <TableHead>
-          <TableRow>
-            <TableCell align="right">Name</TableCell>
-            <TableCell align="right">ID</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((user, index) => (
-            <TableRow key={index}>
-              <TableCell component="th" scope="row">
-                {user.login}
-              </TableCell>
-              <TableCell align="right">{user.id}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <Container maxWidth='lg' className={classes.containerStyle}>
+        {rows.map((user, index) =>  (
+          <User key={index} classes={classes} user={user} />
+        ))}
+    </ Container>
   );
 }

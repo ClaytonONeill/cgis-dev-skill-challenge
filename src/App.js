@@ -9,6 +9,7 @@ import UserTable from './Components/UserTable.jsx';
 
 function App() {
 
+  // Hook to set user data to array //
   const [userData, setUserData] = useState([]);
 
   // Fetch user data //
@@ -21,10 +22,10 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <React.Fragment>
       <Header />
       <UserTable userData={userData} />
-    </div>
+    </ React.Fragment>
   );
 }
 
