@@ -1,6 +1,7 @@
 // IMPORTS //
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import UserContainer from './Components/UserContainer.jsx';
 
 // STYLES //
 import './App.css';
@@ -9,6 +10,7 @@ function App() {
 
   const [userData, setUserData] = useState([]);
 
+  // Fetch user data //
   useEffect( async () => {
 
     const results = await axios('https://api.github.com/users?per_page=10');
@@ -19,9 +21,9 @@ function App() {
 
 
   return (
-    <div>
-
-    </div>
+    <React.Fragment>
+      <UserContainer />
+    </ React.Fragment>
   );
 }
 
