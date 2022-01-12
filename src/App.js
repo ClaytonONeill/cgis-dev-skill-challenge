@@ -4,12 +4,12 @@ import React, { useState, useEffect } from 'react';
 
 // COMPONENTS //
 import Header from './Components/Header.jsx';
-import UserTable from './Components/UserTable.jsx';
+import UsersContainer from './Components/UsersContainer.jsx';
 
 
 function App() {
 
-  // Hook to set user data to array //
+  // Set data to array //
   const [userData, setUserData] = useState([]);
 
   // Fetch user data //
@@ -17,14 +17,17 @@ function App() {
 
     const results = await axios('https://api.github.com/users?per_page=10');
 
-    setUserData(results.data);
+    setUserData(results.data.sort((userA, userB) => {
+      return userA.login > userB.login ? 1 : -1
+    }));
 
   }, []);
+
 
   return (
     <React.Fragment>
       <Header />
-      <UserTable userData={userData} />
+      <UsersContainer userData={userData} />
     </ React.Fragment>
   );
 }

@@ -9,9 +9,9 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
 
-export default function User({ user, classes }) {
+export default function AllUsersCardView({ user, classes, showOneUser }) {
   return (
-    <Card className={classes.cardStyle}>
+    <Card className={classes.allUsersCardStyle}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           Username: {user.login}
@@ -21,7 +21,7 @@ export default function User({ user, classes }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">View Profile</Button>
+        <Button size="small" onClick={() => showOneUser(user.id)}>View Profile</Button>
       </CardActions>
     </Card>
   );

@@ -15,7 +15,7 @@ export default function Header() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h4" sx={{ flexGrow: 1 }}>
+          <Typography variant="h4" sx={{ flexGrow: 1 }} style={{fontStyle: 'italic'}}>
             Github Users
           </Typography>
         </Toolbar>
