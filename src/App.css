@@ -1,0 +1,16 @@
+.detailedUserCardStyle  {
+  margin: 10px;
+  padding: 10px;
+}
+
+.userImage  {
+  height: 20em;
+  width: 20em;
+}
+
+.testDiv  {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
