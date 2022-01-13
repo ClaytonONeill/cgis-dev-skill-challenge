@@ -26,7 +26,7 @@ export default function UserLinkList({ userUrls }) {
               style={{
               width: '10em',
               margin: '3px'}}
-              >{value[0].split('_')[0]}
+              >{value[0] == 'html_url' ? 'My Github' : value[0].split('_')[0]}
             </Button>
           </a>
       ))}

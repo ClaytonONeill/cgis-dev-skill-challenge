@@ -89,7 +89,7 @@ export default function UserCardView({ userInfo, classes }) {
           />
         </Grid>
         <CardContent>
-          <Typography variant='h4' component='div'>
+          <Typography variant='h5' component='div'>
             Github user: {userInfo.login}
           </Typography>
           <Typography variant='h6'>
@@ -108,6 +108,7 @@ export default function UserCardView({ userInfo, classes }) {
               <span>User ID: {userInfo.id}</span>
               <span>Node ID: {userInfo.node_id}</span>
             </div>
+            <h4 style={{marginLeft: '10px'}}>Links to user data:</h4>
           <UserLinkList
             userUrls={userUrls}
           />
@@ -128,7 +129,7 @@ export default function UserCardView({ userInfo, classes }) {
           </div>
         </CardContent>
       </Card>
-  }
+    }
   </ React.Fragment>
   );
 }
