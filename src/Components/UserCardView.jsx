@@ -62,7 +62,7 @@ export default function UserCardView({ userInfo, classes }) {
           <div>
             <Grid>
               <Avatar
-                style={{backgroundColor: '#' + Math.floor(Math.random()*16777215).toString(16)}} // SOURCE "https://css-tricks.com/randomcolor/"
+                style={{backgroundColor: '#' + Math.floor(Math.random()*16777215).toString(16), marginLeft: '2px'}} // SOURCE "https://css-tricks.com/randomcolor/"                
                 sx={{height: '3.5em', width: '3.5em'}}
                 variant='square'>
                 {userInfo.login[0].toUpperCase()}
@@ -130,6 +130,6 @@ export default function UserCardView({ userInfo, classes }) {
         </CardContent>
       </Card>
     }
-  </ React.Fragment>
+  </React.Fragment>
   );
 }
