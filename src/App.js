@@ -14,7 +14,7 @@ const getData = async () => {
   .then((res) =>  {
     const results = res.data.sort((user1, user2) => {
       return user1.login > user2.login ? 1 : -1
-    })
+    })    
     return results;
   })
   .catch((err) => {

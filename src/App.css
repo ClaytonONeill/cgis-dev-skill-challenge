@@ -8,9 +8,10 @@
   width: 20em;
 }
 
-.testDiv  {
-  border: 1px solid black;
+.showUserHeader  {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-around;
+  margin: 3px;
+  padding: 5px;
 }

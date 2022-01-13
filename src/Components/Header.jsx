@@ -1,5 +1,6 @@
 // IMPORTS //
 import React from 'react';
+import { GoMarkGithub} from 'react-icons/go';
 
 // STYLES //
 import { AppBar } from '@mui/material';
@@ -11,10 +12,16 @@ import { Typography } from '@mui/material';
 export default function Header() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position='static'>
+      <AppBar position='static' style={{background: 'black'}}>
         <Toolbar>
-          <Typography variant='h4' sx={{ flexGrow: 1 }} style={{ fontStyle: 'italic' }}>
-            Github Users
+          <Typography variant='h4' sx={{ flexGrow: 1 }} style={{ marginTop: '6px'}} >
+            <GoMarkGithub/>
+          </Typography>
+          <Typography variant='h6' style={{ color: 'white' }} >
+            Github user dashboard.
+            <Typography align='center' style={{fontStyle: 'italic'}} >
+               Find your next dev!
+            </Typography>
           </Typography>
         </Toolbar>
       </AppBar>
