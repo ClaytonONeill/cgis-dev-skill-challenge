@@ -15,7 +15,7 @@ export default function Header() {
       <AppBar position='static' style={{background: 'rgba(0,0,0, 0.7)'}}>
         <Toolbar>
           <Typography variant='h4' sx={{ flexGrow: 1 }} style={{ marginTop: '6px'}} >
-            <GoMarkGithub/>
+            <a href='https://github.com' style={{ color: 'white' }}><GoMarkGithub/></a>
           </Typography>
           <Typography variant='h6' style={{ color: 'white' }} >
             Github user dashboard.

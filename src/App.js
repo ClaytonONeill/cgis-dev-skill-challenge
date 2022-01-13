@@ -16,13 +16,12 @@ const getData = async () => {
     const results = res.data.sort((user1, user2) => {
       return user1.login > user2.login ? 1 : -1
     })
-    console.log(results)
     return results;
   })
   .catch((err) => {
     console.error(err)
   })
-}
+};
 
 function App() {
 

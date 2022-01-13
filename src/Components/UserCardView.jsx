@@ -5,12 +5,14 @@ import React, { useState } from 'react';
 import UserLinkList from './UserLinkList.jsx';
 
 // MATERIAL ELEMENTS //
+import { Avatar } from '@mui/material';
 import { Button } from '@mui/material';
 import { Card } from '@mui/material';
 import { CardActions } from '@mui/material';
 import { CardContent } from '@mui/material';
 import { CardHeader } from '@mui/material';
 import { CardMedia } from '@mui/material';
+import { Grid } from '@mui/material';
 import { IconButton } from '@mui/material';
 import { Typography } from '@mui/material';
 
@@ -34,6 +36,7 @@ export default function UserCardView({ userInfo, classes }) {
     }
   };
 
+  // FILTER FOR ONLY VALID URLS TO PASS TO USERLINKLIST //
   let userUrls = Object.entries(userInfo).filter((value) =>  {
     return value[1] !== '' && value[0].includes('url')
   });
@@ -44,47 +47,67 @@ export default function UserCardView({ userInfo, classes }) {
     {!view ?
     <Card style={{margin: 5, padding: 10}}>
       <CardContent>
-        <Typography gutterBottom variant='h5' component='div'>
-          Username: {userInfo.login}
-        </Typography>
-        <Typography variant='h6'>
-          User ID: {userInfo.id}
-        </Typography>
+        <div style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between'}}>
+          <div>
+            <Typography gutterBottom variant='h5' component='div'>
+              Username: {userInfo.login}
+            </Typography>
+            <Typography variant='h6' align='left'>
+              User ID: {userInfo.id}
+            </Typography>
+          </div>
+          <div>
+            <Grid>
+              <Avatar
+                style={{backgroundColor: '#' + Math.floor(Math.random()*16777215).toString(16)}} // SOURCE "https://css-tricks.com/randomcolor/"
+                sx={{height: '3.5em', width: '3.5em'}}
+                variant='square'>
+                {userInfo.login[0].toUpperCase()}
+              </Avatar>
+            </Grid>
+          </div>
+        </div>
       </CardContent>
       <CardActions>
-        <Button onClick={() => handleView()}> Show Details </Button>
+        <Button align='bottom' onClick={() => handleView()}> Show Details </Button>
       </CardActions>
     </Card>
     :
     <Card style={{ margin: 5 }} >
       <Button style={{ margin: '5px' }}onClick={() => handleView()}>Go Back</Button>
-        <CardMedia
-          alt={userInfo.login}
-          component='img'
-          height='400'
-          image={userInfo.avatar_url}
-        />
+        <Grid item xs={12} sm={6} md={5} lg={4.8} xl={4}>
+          <CardMedia
+            alt={userInfo.login}
+            component='img'
+            image={userInfo.avatar_url}
+            style={{
+              height: '20em',
+            }}
+          />
+        </Grid>
         <CardContent>
           <Typography variant='h4' component='div'>
             Github user: {userInfo.login}
           </Typography>
           <Typography variant='h6'>
-            Profile Views {clickCount}
+            Profile Views: {clickCount}
           </Typography>
             <div
               style={{
                 borderTop: '1px solid grey',
+                borderLeft: '1px solid grey',
+                borderRight: '1px solid grey',
                 display: 'flex',
+                fontWeight: 'bold',
                 justifyContent: 'space-between',
                 marginBottom: '10px',
-                paddingTop: '5px'}}>
+                padding: '5px'}}>
               <span>User ID: {userInfo.id}</span>
               <span>Node ID: {userInfo.node_id}</span>
             </div>
-          <Typography>
-          </Typography>
-          <Typography>
-          </Typography>
           <UserLinkList
             userUrls={userUrls}
           />

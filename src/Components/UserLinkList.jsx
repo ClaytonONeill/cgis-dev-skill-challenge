@@ -19,7 +19,16 @@ export default function UserLinkList({ userUrls }) {
       flexWrap: 'wrap',
       justifyContent: 'space-evenly'}}>
       {userUrls.map((value, index) =>  (
-            <Button key={index} variant='outlined' style={{ width: '10em', margin: '3px'}}>{value[0].split('_')[0]}</Button>
+          <a key={value[1]} href={value[1]} style={{textDecoration: 'none'}} target='blank'>
+            <Button
+              key={index}
+              variant='outlined'
+              style={{
+              width: '10em',
+              margin: '3px'}}
+              >{value[0].split('_')[0]}
+            </Button>
+          </a>
       ))}
     </div>
   )
