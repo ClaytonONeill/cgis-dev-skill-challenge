@@ -1,12 +1,14 @@
-# This applications work flow was managed and tracked within:
+## This applications work flow was managed and tracked within:
 
 ### https://trello.com/b/tCfElCeG/github-users-web-app-daily-work-flow
 
-# Running this project on your local machine:
+## Running this project on your local machine:
 
+- Git clone https://github.com/ClaytonONeill/cgis-dev-skill-challenge
+- Once cloned, run 'npm i' within the project folder.
+- Enjoy!
 
-
-# Pre-deployment notes.
+## Pre-deployment notes.
 
 ## Before this project goes live, here a few things that could be done:
 
@@ -23,6 +25,13 @@
 
  - Adding a 'load more users' button would be another functionality that would be nice.
 
+# Libraries Used:
+
+### Material-UI
+
+### Axios
+
+### React-Icons
 
 
 # Getting Started with Create React App
