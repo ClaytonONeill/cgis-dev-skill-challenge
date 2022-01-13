@@ -6,7 +6,8 @@ import React, { useState, useEffect } from 'react';
 import Header from './Components/Header.jsx';
 import UsersContainer from './Components/UsersContainer.jsx';
 
-
+// STYLES //
+import './App.css';
 
 // FETCH USER DATA //
 const getData = async () => {
@@ -14,7 +15,8 @@ const getData = async () => {
   .then((res) =>  {
     const results = res.data.sort((user1, user2) => {
       return user1.login > user2.login ? 1 : -1
-    })    
+    })
+    console.log(results)
     return results;
   })
   .catch((err) => {

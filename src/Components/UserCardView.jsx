@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 // COMPONENTS //
-import UserInfoTable from './UserInfoTable.jsx';
+import UserLinkList from './UserLinkList.jsx';
 
 // MATERIAL ELEMENTS //
 import { Button } from '@mui/material';
@@ -13,8 +13,6 @@ import { CardHeader } from '@mui/material';
 import { CardMedia } from '@mui/material';
 import { IconButton } from '@mui/material';
 import { Typography } from '@mui/material';
-
-
 
 
 export default function UserCardView({ userInfo, classes }) {
@@ -36,8 +34,9 @@ export default function UserCardView({ userInfo, classes }) {
     }
   };
 
-  let userInfoKeys = Object.keys(userInfo);
-  let userInfoValues = Object.values(userInfo);
+  let userUrls = Object.entries(userInfo).filter((value) =>  {
+    return value[1] !== '' && value[0].includes('url')
+  });
 
 
   return (
@@ -86,10 +85,24 @@ export default function UserCardView({ userInfo, classes }) {
           </Typography>
           <Typography>
           </Typography>
-          <UserInfoTable
-            userInfoKeys={userInfoKeys}
-            userInfoValues={userInfoValues}
+          <UserLinkList
+            userUrls={userUrls}
           />
+          <div style={{
+            borderTop: '1px solid grey',
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            marginTop: '10px',
+            padding: '3px'
+            }}>
+            <Typography variant='subtitle1'>
+              User type: {userInfo.type}
+            </ Typography>
+            <Typography variant='subtitle1'>
+              Site Admin: {!userInfo.admin ? 'False' : 'True'}
+            </ Typography>
+          </div>
         </CardContent>
       </Card>
   }

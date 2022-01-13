@@ -35,7 +35,7 @@ export default function UsersContainer({ userData }) {
   let allUsers = [...userData];
 
   return (
-    <Container maxWidth='lg' className={classes.containerStyle}>
+    <Container maxWidth='md' className={classes.containerStyle}>
         {allUsers.map((user, index) =>  (
           <UserCardView
             classes={classes}

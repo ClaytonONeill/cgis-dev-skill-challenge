@@ -1,17 +1,4 @@
-.detailedUserCardStyle  {
-  margin: 10px;
-  padding: 10px;
-}
-
-.userImage  {
-  height: 20em;
-  width: 20em;
-}
-
-.showUserHeader  {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin: 3px;
-  padding: 5px;
+html  {
+  background-image: url('./images/cool-background.png');
+  background-size: cover;
 }

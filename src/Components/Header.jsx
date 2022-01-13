@@ -12,7 +12,7 @@ import { Typography } from '@mui/material';
 export default function Header() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position='static' style={{background: 'black'}}>
+      <AppBar position='static' style={{background: 'rgba(0,0,0, 0.7)'}}>
         <Toolbar>
           <Typography variant='h4' sx={{ flexGrow: 1 }} style={{ marginTop: '6px'}} >
             <GoMarkGithub/>
